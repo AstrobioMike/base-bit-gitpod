@@ -1,0 +1,21 @@
+tasks:
+  - name: initialize
+    init: |
+      curl -LO https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+      bash Miniconda3-latest*.sh -bfp /workspace/miniconda3 && rm Miniconda3-latest*.sh
+      source /workspace/miniconda3/etc/profile.d/conda.sh
+      conda init bash && source ~/.bashrc
+      conda create -n bit -c astrobiomike -c conda-forge -c bioconda -c defaults bit -y
+    command: |
+      source /workspace/miniconda3/etc/profile.d/conda.sh
+      conda init bash && source ~/.bashrc
+      conda activate gtotree
+      export PATH="/workspace/miniconda3/envs/bit/bin:$PATH"
+
+vscode:
+  extensions:
+    - ms-python.debugpy
+    - eamodio.gitlens
+    - ms-python.python
+    - mechatroner.rainbow-csv # Highlight columns in csv files in different colors
+    
