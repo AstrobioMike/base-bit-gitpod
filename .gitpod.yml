@@ -9,7 +9,7 @@ tasks:
     command: |
       source /workspace/miniconda3/etc/profile.d/conda.sh
       conda init bash && source ~/.bashrc
-      conda activate gtotree
+      conda activate bit
       export PATH="/workspace/miniconda3/envs/bit/bin:$PATH"
 
 vscode:
